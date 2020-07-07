@@ -18,7 +18,9 @@ class App extends Component {
       temp_max:undefined,
       temp_min:undefined,
       description:"",
-      error:false
+      error:false,
+      wind:'',
+      humidity:''
     };
    
     this.weathericon={
@@ -79,7 +81,9 @@ class App extends Component {
       temp_max:this.calcelsius(response.main.temp_max),
       temp_min:this.calcelsius(response.main.temp_min),
       description:response.weather[0].description,
-      error:false
+      error:false,
+      wind:response.wind.speed,
+      humidity:response.main.humidity
     });
 
     this.get_weathericon(this.weathericon,response.weather[0].id)
@@ -94,7 +98,8 @@ class App extends Component {
          <Form loadweather={this.getWeather}error={this.state.error} />
          <Weather city={this.state.city} country={this.state.country}
          celsius={this.state.celsius} temp_max={this.state.temp_max} temp_min={this.state.temp_min}
-         description={this.state.description} weathericon={this.state.icon}
+         description={this.state.description} weathericon={this.state.icon} wind={this.state.wind}
+         humidity={this.state.humidity}
          />
        </div>
   );

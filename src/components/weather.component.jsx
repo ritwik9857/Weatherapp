@@ -2,7 +2,7 @@ import React from 'react';
 const weather = props =>{
     return(
 
-        <div style={{textAlign:'center',color:'black'}}className='container'>
+        <div style={{textAlign:'center',color:'white'}}className='container'>
             <div className='place'>
                 <h1 style={{fontSize:'50px'}}>{props.city}</h1>
                 <h5>
@@ -17,12 +17,13 @@ const weather = props =>{
     );
 }
 
-function minmax(min,max){
+function minmax(min,max,props){
     if(min,max){
         return(
             <h3>
-        <span style={{fontSize:'40px',margin:'20px'}}>MIN- {min}&deg;</span>
-        <span style={{fontSize:'40px',margin:'20px'}}>MAX- {max}&deg;</span>
+        <span style={{fontSize:'40px',margin:'20px'}}>{min}&deg;</span>
+        <span style={{fontSize:'40px',margin:'20px'}}>{max}&deg;</span>
+    
     </h3>
         );
     }
